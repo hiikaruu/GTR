@@ -40,7 +40,7 @@ public class SecurityConfig {
                 .requestMatchers("http://localhost:5173/register",
                         "http://localhost:5173/login",
                         "/api/auth/**",
-                "/api/auth/checkEmailExists")
+                "/api/auth/checkEmailExists", "api/gtr/library")
                 .permitAll()
                 .anyRequest()
                 .authenticated()

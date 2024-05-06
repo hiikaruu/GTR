@@ -12,6 +12,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/gtr")
 @RequiredArgsConstructor
+@CrossOrigin(origins = "http://localhost:5173")
 public class CategoryController {
     private final CategoryService categoryService;
     @PostMapping("/library")

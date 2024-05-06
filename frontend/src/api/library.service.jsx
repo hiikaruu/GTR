@@ -1,5 +1,6 @@
 import axios from 'axios';
 import AuthService from "./auth.service.jsx";
+
 const token = AuthService.getToken()
 
 const instance = axios.create({
