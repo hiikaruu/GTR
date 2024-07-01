@@ -10,11 +10,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.13.0",
+    "@cloudinary/url-gen": "^1.19.0",
     "@lordicon/react": "^1.6.0",
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/toolbar": "^3.12.0",
+    "@react-pdf-viewer/zoom": "^3.12.0",
     "axios": "^1.6.7",
+    "cloudinary": "^2.2.0",
+    "cloudinary-core": "^2.13.1",
+    "html-react-parser": "^5.1.10",
+    "mammoth": "^1.7.2",
     "react": "^18.2.0",
+    "react-doc-viewer": "^0.1.11",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-pdf": "^9.0.0",
     "react-router": "^6.22.1",
     "react-router-dom": "^6.22.1",
     "react-toastify": "^10.0.4"

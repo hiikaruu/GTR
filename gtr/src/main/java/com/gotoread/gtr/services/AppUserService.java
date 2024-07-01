@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface AppUserService {
-    AppUser findUserByUsername(String username);
+    Long findUserIdByUsername(String username);
 }

@@ -1,5 +1,6 @@
 package com.gotoread.gtr.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
@@ -21,12 +22,22 @@ public class AppUser implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(unique = true)
     private String username;
     private String email;
     private String password;
+
     @Enumerated(EnumType.STRING)
     private AppUserRole appUserRole;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference
+    private List<Category> categories;
+
+    @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonManagedReference // Основная связь для Book
+    private List<Book> books;
 
 
     @Override

@@ -6,7 +6,6 @@ import com.gotoread.gtr.dto.AppUserRegistrationDto;
 import com.gotoread.gtr.services.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 
 @RestController

@@ -1,5 +1,7 @@
 package com.gotoread.gtr.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,11 +21,15 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "name", nullable = false)
     private String name;
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonBackReference
     private AppUser user;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "category")
     private List<Book> books;
 

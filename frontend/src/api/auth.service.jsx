@@ -47,7 +47,7 @@ const AuthService = {
     // Метод для получения токена из локального хранилища
     getToken() {
         return localStorage.getItem('token');
-    }
+    },
 };
 
 export default AuthService;

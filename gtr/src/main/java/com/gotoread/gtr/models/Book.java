@@ -1,5 +1,7 @@
 package com.gotoread.gtr.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,31 +15,36 @@ import java.util.Date;
 @Table(name = "book")
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;
+
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @JsonBackReference
     private AppUser user;
 
     @ManyToOne
-    @JoinColumn(name = "category_id", referencedColumnName = "id")
+    @JoinColumn(name = "category_id", nullable = true)
+    @JsonBackReference
     private Category category;
+
     @Column(name = "title", nullable = false)
     private String title;
-    @Column(name = "file_url", nullable = false)
+
+    @Column(name = "file_url", nullable = true)
     private String file_url;
+
     @Column(name = "authorship", nullable = false)
     private String authorship;
-    @Column(name = "dop", nullable = true)
-    private Date dop;
-    @Column(name = "pages", nullable = false)
-    private  Integer pages;
 
-    public Book(String title, String fileUrl, String authorship, Date dop, Integer pages) {
+    @Column(name = "dop", nullable = true)
+    private String dop;
+
+
+    public Book(String title, String fileUrl, String authorship, String dop) {
         this.title = title;
         this.file_url = fileUrl;
         this.authorship = authorship;
         this.dop = dop;
-        this.pages = pages;
     }
 }

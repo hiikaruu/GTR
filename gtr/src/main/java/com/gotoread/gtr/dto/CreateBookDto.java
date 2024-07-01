@@ -1,5 +1,6 @@
 package com.gotoread.gtr.dto;
 
+import com.gotoread.gtr.models.AppUser;
 import lombok.*;
 
 import java.util.Date;
@@ -12,6 +13,5 @@ public class CreateBookDto {
     private String title;
     private String file_url;
     private String authorship;
-    private Date dop;
-    private  Integer pages;
+    private String dop;
 }

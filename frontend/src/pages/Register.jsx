@@ -10,20 +10,20 @@ import { useNavigate } from 'react-router-dom';
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [name, setName] = useState('')
+    const [username, setUsername] = useState('')
     const navigate = useNavigate();
     const switchToLoginForm = () => {
         navigate('/login');
     }
     const registrationHandler = async (e) => {
         e.preventDefault();
-        if (!email || !password || !name) {
+        if (!email || !password || !username) {
             toast.error("Please fill in all required fields.");
             return;
         }
 
         try {
-            const response = await AuthService.register({ email, password, name });
+            const response = await AuthService.register({ email, password, username });
             if (response) {
                 toast.success("Аккаунт успешно создан");
                 navigate('/login')
@@ -53,7 +53,7 @@ const Register = () => {
                     <input type="text"
                            placeholder="name"
                            onChange={(e) =>
-                               setName(e.target.value)}/>
+                               setUsername(e.target.value)}/>
                 </div>
                 <div className="input-box">
                     <input type="text"

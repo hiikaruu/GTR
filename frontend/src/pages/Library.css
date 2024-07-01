@@ -48,10 +48,25 @@
 .modal{
     margin-top:10px;
 }
+.modal h3{
+    color: white;
+    font-size: 1.3vw;
+    padding-left: 10px;
+    margin: 5px;
+
+
+}
+.modal .modal-content-list{
+    padding-left: 20px;
+    margin: 5px;
+    color: white;
+    font-size: 1.3vw;
+
+}
 .modal .text-modal{
     width: 100%;
     height: 100%;
-    background: rgba(15, 4, 21, 0.71);
+    background: rgba(26, 4, 4, 0.64);
     outline: none;
     border: 2px solid rgba(255,255,255, .2);
     border-radius: 5px;
@@ -64,7 +79,7 @@
     font-family: Poppins, sans-serif;
 }
 .modal .button-modal{
-    background: rgba(15, 4, 21, 0.71);
+    background: rgba(26, 4, 4, 0.64);
     margin-top:10px;
     padding: 20px 45px 20px 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.42);
@@ -189,6 +204,7 @@
     border-bottom: 3px solid white;
     padding: 10px;
 }
+
 .books-panel h2{
     font-size: 2vw;
     text-align: left;
@@ -202,6 +218,7 @@
 .book-library-section .book-list {
     list-style-type: none;
     padding: 0;
+    text-decoration: none;
 }
 .book-library-section .add-book-button {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.42);
@@ -215,18 +232,44 @@
     width: 100%;
 }
 
-.book-list .book-item {
-    margin-top: 10px;
-    margin-left: 10px;
-    font-size: 1.3vw;
-}
-
 .book-list .book-link {
-    text-decoration: none;
-    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.42);
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.3vw;
+    display: table;
+    width: 100%;
+    margin-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+
 }
 
-.book-list .book-link:hover {
-    text-decoration: underline;
-    color: #ffffff;
+.book-list .book-link a {
+    color: white;
+    text-decoration: none;
+}
+
+.book-list .book-link a:hover {
+    color: #6beadc;
+    text-decoration: none;
+}
+.book-link .book-actions{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+
+}
+.book-actions button {
+
+    padding: 10px 10px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.51);
+    border: none;
+    cursor: pointer;
+    font-size: 1vw;
+    width: 100%;
 }

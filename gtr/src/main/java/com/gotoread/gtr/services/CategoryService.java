@@ -5,8 +5,12 @@ import com.gotoread.gtr.models.Category;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
 
 @Service
+
 public interface CategoryService {
-    Category createCategory(CreateCategoryDto createCategoryDto) throws IOException;
+    List<Category> getCategoriesByUser(String username);
+
+    Category createCategory(String username, CreateCategoryDto createCategoryDto);
 }

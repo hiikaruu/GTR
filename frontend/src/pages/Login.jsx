@@ -10,7 +10,8 @@ export const Login= () =>{
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
-    const switchToRegisterForm = () => {
+    const switchToRegisterForm = (e) => {
+        e.preventDefault();
         navigate('/register');
     }
 
@@ -20,6 +21,7 @@ export const Login= () =>{
             const token = await AuthService.login({ email, password});
             if (token) {
                 toast.success("Login is successful");
+                e.preventDefault();
                 navigate('/gtr');
             }
         } catch (error) {
